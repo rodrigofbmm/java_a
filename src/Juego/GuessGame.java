@@ -3,11 +3,17 @@ package Juego;
 import java.util.Random;
 
 public class GuessGame {
-    private  int numeroSecreto;
+    private int numeroSecreto;
     private final int vidas;
 
     public GuessGame(int vidas) {
         this.vidas = vidas;
+        generarNumeroSecreto();
+    }
+
+    private void generarNumeroSecreto() {
+        Random random = new Random();
+        this.numeroSecreto = random.nextInt(10) + 1; // número entre 1 y 10
     }
 
     public int getMaxVidas() {
@@ -15,8 +21,6 @@ public class GuessGame {
     }
 
     public int getNumeroSecreto() {
-        Random random = new Random();
-        this.numeroSecreto = random.nextInt(10) + 1; // número secreto entre 1 y 10
         return numeroSecreto;
     }
 
@@ -28,12 +32,10 @@ public class GuessGame {
                 return Estado.OUTOFRANGE;
             }
 
-            return (numero == numeroSecreto) ?Estado.SUCCESS : Estado.FAILED;
+            return (numero == numeroSecreto) ? Estado.SUCCESS : Estado.FAILED;
 
         } catch (NumberFormatException e) {
             return Estado.INVALID;
         }
     }
 }
-
-
