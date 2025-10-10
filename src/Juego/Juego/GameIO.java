@@ -1,7 +1,7 @@
-package Juego;
+package Juego.Juego;
 
 public abstract class GameIO {
-    void print(String s) {
+    public void print(String s) {
 
     }
 

@@ -1,4 +1,6 @@
-package Juego;
+package Juego.Juego;
+
+import Juego.InfoJugador.Jugador;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,7 +17,8 @@ public class AppGame {
         this.jugadores = jugadores;
     }
 
-    public  void start() {
+    //jueguito de acertar
+    public  void Acertar() {
 
         io.print("Bienvenido al juego de adivinar (1-10)");
 
@@ -61,23 +64,11 @@ public class AppGame {
 
         if (respuesta.equals("1")) {
             GuessGame nuevoJuego = new GuessGame(game.getMaxVidas());
-            new AppGame(nuevoJuego, io, jugadores).start();
+            new AppGame(nuevoJuego, io, jugadores).Acertar();
         } else {
             io.print("Gracias por jugar");
         }
     }
 
-   /* public static void main(String[] args) {
-        GameIO consola = new Consola();
-        consola.print("Introduce tu nombre:");
-        Scanner scanner = new Scanner(System.in);
-        String nombre = scanner.nextLine();
-
-        ArrayList<Jugador> jugadores = new ArrayList<>();
-        jugadores.add(new Jugador(nombre));
-
-        GuessGame juego = new GuessGame(3);
-        new AppGame(juego, consola, jugadores).start();
-    }*/
 }
 

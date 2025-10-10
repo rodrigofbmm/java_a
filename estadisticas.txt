@@ -1,0 +1,4 @@
+Jugador: carlos
+Partidas jugadas: 1
+Aciertos: 0
+-----------------------------
